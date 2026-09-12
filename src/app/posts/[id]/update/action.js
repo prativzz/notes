@@ -10,6 +10,6 @@ export  async function action(id,body) {
 
    revalidatePath(`/posts/${id}`);
   revalidatePath("/");        
-  redirect(`/posts/${id}`);
+  //redirect(`/posts/${id}`);
 }
 

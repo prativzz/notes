@@ -4,13 +4,15 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState,use } from "react"
 import { action } from "./action";
-
+import { redirect } from "next/navigation";
 import Link from "next/link";
 export default function Page({ params }) {
     const { id } = use(params);
     const [body , setBody]= useState()
     function handleSubmit(){
         action(id,body)
+          redirect(`/posts/${id}`);
+        
     }
   return (<div className="w-100 m-auto">
     <Card >
