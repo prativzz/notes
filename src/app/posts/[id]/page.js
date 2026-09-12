@@ -15,7 +15,6 @@ export async function generateStaticParams() {
 
 export default async function NotePage({  params }) {
       const { id } = await params;
- const router=useRouter()
     const data = await fetch(`https://6aa3eac6e7ae868cdf7b6bf5.mockapi.io/notes/${id}`)
     if (!data.ok) notFound();
     const note=await data.json()
