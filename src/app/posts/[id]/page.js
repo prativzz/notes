@@ -23,9 +23,9 @@ export default async function NotePage({  params }) {
   <CardHeader><CardTitle>{note.title}</CardTitle></CardHeader>
   <CardContent>{note.body}</CardContent>
   <CardFooter>
-    <Button >
-      <Link onClick={()=>router.push(`/posts/${id}/update`)}>Update</Link>
-    </Button>
+  
+      <Button onClick={()=>router.push(`/posts/${id}/update`)}>Update</Button>
+    
   </CardFooter>
 </Card>  </div>;
 }
