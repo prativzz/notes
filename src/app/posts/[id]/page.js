@@ -1,11 +1,11 @@
 
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-    
+    const router=useRouter()
         const data = await fetch(`https://6aa3eac6e7ae868cdf7b6bf5.mockapi.io/notes`)
 
   const notes = await data.json();
@@ -24,7 +24,7 @@ export default async function NotePage({  params }) {
   <CardContent>{note.body}</CardContent>
   <CardFooter>
     <Button >
-      <Link href={`/posts/${id}/update`}>Update</Link>
+      <Link onClick={()=>router.push(`/posts/${id}/update`)}>Update</Link>
     </Button>
   </CardFooter>
 </Card>  </div>;
