@@ -10,7 +10,8 @@ export default function Page({ params }) {
   const router = useRouter()
     const { id } = use(params);
     const [body , setBody]= useState()
-    function handleSubmit(){
+    function handleSubmit(e){
+      e.preventDefault();  
         action(id,body)
           router.replace(`/posts/${id}`);
         
