@@ -14,8 +14,10 @@ export default function Page({ params }) {
     }
   return (<div className="w-100 m-auto">
     <Card >
+       <form onSubmit={handleSubmit}>
         <Input placeholder='enter body' onChange={(e)=>setBody(e.target.value)}/>
-       <Button type="submit" onClick={handleSubmit}>submit</Button>
+       <Button type="submit" >submit</Button>
+       </form>
         
     </Card>
     </div>
