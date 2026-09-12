@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useState,use } from "react"
 import { action } from "./action";
 
-
+import Link from "next/link";
 export default function Page({ params }) {
     const { id } = use(params);
     const [body , setBody]= useState()
@@ -15,7 +15,8 @@ export default function Page({ params }) {
   return (<div className="w-100 m-auto">
     <Card >
         <Input placeholder='enter body' onChange={(e)=>setBody(e.target.value)}/>
-        <Button onClick={handleSubmit}>submit</Button>
+       <Button type="submit" onClick={handleSubmit}>submit</Button>
+        
     </Card>
     </div>
   )
